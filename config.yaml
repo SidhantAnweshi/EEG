@@ -1,0 +1,142 @@
+# ============================================================
+# EEG Seizure Detection Configuration
+# CHB-MIT Scalp EEG Dataset + SVM Pipeline
+# ============================================================
+
+# --- Paths ---
+paths:
+  raw_data: "data/raw"                    # Raw CHB-MIT EDF files
+  processed_data: "data/processed"        # Processed features/labels
+  models: "models"                        # Saved trained models
+  figures: "figures"                      # Generated plots
+  results: "results"                      # Metrics and reports
+
+# --- Dataset ---
+dataset:
+  name: "CHB-MIT"
+  sampling_rate: 256                      # Hz (fixed for CHB-MIT)
+  # Standard 10-20 EEG channels common across most CHB-MIT patients
+  # We use a common subset to ensure consistency across patients
+  common_channels:
+    - "FP1-F7"
+    - "F7-T7"
+    - "T7-P7"
+    - "P7-O1"
+    - "FP1-F3"
+    - "F3-C3"
+    - "C3-P3"
+    - "P3-O1"
+    - "FP2-F4"
+    - "F4-C4"
+    - "C4-P4"
+    - "P4-O2"
+    - "FP2-F8"
+    - "F8-T8"
+    - "T8-P8"
+    - "P8-O2"
+    - "FZ-CZ"
+    - "CZ-PZ"
+  # Patients to process (subset for faster iteration)
+  # These patients are chosen for having well-annotated seizures
+  patients_subset:
+    - "chb01"
+    - "chb02"
+    - "chb03"
+    - "chb05"
+    - "chb08"
+    - "chb10"
+
+# --- Preprocessing ---
+preprocessing:
+  bandpass_low: 0.5                       # Hz - high-pass cutoff
+  bandpass_high: 50.0                     # Hz - low-pass cutoff
+  notch_freq: 60.0                        # Hz - powerline noise (US)
+  filter_order: 4                         # Butterworth filter order
+
+# --- Segmentation ---
+segmentation:
+  window_seconds: 5                       # Window length in seconds
+  overlap_fraction: 0.5                   # 50% overlap between windows
+  # A window is labeled "seizure" if >=50% of it overlaps with annotated seizure
+  seizure_overlap_threshold: 0.5
+
+# --- Feature Extraction ---
+features:
+  # Frequency bands for band-power computation (Hz)
+  freq_bands:
+    delta: [0.5, 4]
+    theta: [4, 8]
+    alpha: [8, 13]
+    beta: [13, 30]
+    gamma: [30, 50]
+  # Features to extract per channel
+  feature_types:
+    - "mean"
+    - "variance"
+    - "std"
+    - "rms"
+    - "skewness"
+    - "kurtosis"
+    - "line_length"
+    - "zero_crossings"
+    - "band_power_delta"
+    - "band_power_theta"
+    - "band_power_alpha"
+    - "band_power_beta"
+    - "band_power_gamma"
+    - "relative_band_power_delta"
+    - "relative_band_power_theta"
+    - "relative_band_power_alpha"
+    - "relative_band_power_beta"
+    - "relative_band_power_gamma"
+    - "spectral_entropy"
+    - "hjorth_activity"
+    - "hjorth_mobility"
+    - "hjorth_complexity"
+
+# --- Data Splitting ---
+splitting:
+  # Patient-wise split (no data leakage)
+  test_size: 0.2                          # Fraction of patients for test
+  val_size: 0.2                           # Fraction of patients for validation
+  random_state: 42
+
+# --- Class Imbalance ---
+imbalance:
+  # Strategy: "class_weight" uses balanced class weights in SVM
+  # "smote" would use SMOTE oversampling (not implemented here for simplicity)
+  strategy: "class_weight"
+
+# --- Models ---
+models:
+  logistic_regression:
+    max_iter: 5000
+    solver: "lbfgs"
+  linear_svm:
+    kernel: "linear"
+    C_range: [0.001, 0.01, 0.1, 1, 10, 100]
+  rbf_svm:
+    kernel: "rbf"
+    C_range: [0.01, 0.1, 1, 10, 100]
+    gamma_range: ["scale", 0.001, 0.01, 0.1, 1]
+
+# --- Cross-Validation ---
+cross_validation:
+  # GroupKFold ensures patient-wise CV (no leakage during tuning)
+  n_splits: 3
+  scoring: "f1"                           # Primary metric for tuning
+
+# --- Evaluation ---
+evaluation:
+  metrics:
+    - "accuracy"
+    - "precision"
+    - "recall"
+    - "specificity"
+    - "f1"
+    - "roc_auc"
+    - "pr_auc"
+  confidence_level: 0.95
+
+# --- Reproducibility ---
+random_state: 42

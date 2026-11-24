@@ -1,0 +1,59 @@
+{
+  "Logistic Regression": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "specificity": 1.0,
+    "f1": 1.0,
+    "roc_auc": 1.0,
+    "pr_auc": 1.0,
+    "confusion_matrix": [
+      [
+        145,
+        0
+      ],
+      [
+        0,
+        13
+      ]
+    ]
+  },
+  "Linear SVM": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "specificity": 1.0,
+    "f1": 1.0,
+    "roc_auc": 1.0,
+    "pr_auc": 0.9999999999999998,
+    "confusion_matrix": [
+      [
+        145,
+        0
+      ],
+      [
+        0,
+        13
+      ]
+    ]
+  },
+  "RBF SVM": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "specificity": 1.0,
+    "f1": 1.0,
+    "roc_auc": 1.0,
+    "pr_auc": 0.9999999999999998,
+    "confusion_matrix": [
+      [
+        145,
+        0
+      ],
+      [
+        0,
+        13
+      ]
+    ]
+  }
+}

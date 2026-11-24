@@ -1,0 +1,243 @@
+{
+  "patients": {
+    "chb01": {
+      "n_files": 2,
+      "n_seizure_files": 1,
+      "n_seizures": 1,
+      "seizure_duration_sec": 30,
+      "total_duration_hours": 0.1111111111111111,
+      "channels": [
+        "FP1-F7",
+        "F7-T7",
+        "T7-P7",
+        "P7-O1",
+        "FP1-F3",
+        "F3-C3",
+        "C3-P3",
+        "P3-O1",
+        "FP2-F4",
+        "F4-C4",
+        "C4-P4",
+        "P4-O2",
+        "FP2-F8",
+        "F8-T8",
+        "T8-P8",
+        "P8-O2",
+        "FZ-CZ",
+        "CZ-PZ"
+      ],
+      "sampling_rate": 256.0,
+      "seizure_annotations": {
+        "chb01_01.edf": [
+          [
+            50,
+            80
+          ]
+        ]
+      }
+    },
+    "chb02": {
+      "n_files": 2,
+      "n_seizure_files": 2,
+      "n_seizures": 2,
+      "seizure_duration_sec": 60,
+      "total_duration_hours": 0.1111111111111111,
+      "channels": [
+        "FP1-F7",
+        "F7-T7",
+        "T7-P7",
+        "P7-O1",
+        "FP1-F3",
+        "F3-C3",
+        "C3-P3",
+        "P3-O1",
+        "FP2-F4",
+        "F4-C4",
+        "C4-P4",
+        "P4-O2",
+        "FP2-F8",
+        "F8-T8",
+        "T8-P8",
+        "P8-O2",
+        "FZ-CZ",
+        "CZ-PZ"
+      ],
+      "sampling_rate": 256.0,
+      "seizure_annotations": {
+        "chb02_01.edf": [
+          [
+            50,
+            80
+          ]
+        ],
+        "chb02_02.edf": [
+          [
+            50,
+            80
+          ]
+        ]
+      }
+    },
+    "chb03": {
+      "n_files": 2,
+      "n_seizure_files": 1,
+      "n_seizures": 1,
+      "seizure_duration_sec": 30,
+      "total_duration_hours": 0.1111111111111111,
+      "channels": [
+        "FP1-F7",
+        "F7-T7",
+        "T7-P7",
+        "P7-O1",
+        "FP1-F3",
+        "F3-C3",
+        "C3-P3",
+        "P3-O1",
+        "FP2-F4",
+        "F4-C4",
+        "C4-P4",
+        "P4-O2",
+        "FP2-F8",
+        "F8-T8",
+        "T8-P8",
+        "P8-O2",
+        "FZ-CZ",
+        "CZ-PZ"
+      ],
+      "sampling_rate": 256.0,
+      "seizure_annotations": {
+        "chb03_01.edf": [
+          [
+            50,
+            80
+          ]
+        ]
+      }
+    },
+    "chb05": {
+      "n_files": 2,
+      "n_seizure_files": 2,
+      "n_seizures": 2,
+      "seizure_duration_sec": 60,
+      "total_duration_hours": 0.1111111111111111,
+      "channels": [
+        "FP1-F7",
+        "F7-T7",
+        "T7-P7",
+        "P7-O1",
+        "FP1-F3",
+        "F3-C3",
+        "C3-P3",
+        "P3-O1",
+        "FP2-F4",
+        "F4-C4",
+        "C4-P4",
+        "P4-O2",
+        "FP2-F8",
+        "F8-T8",
+        "T8-P8",
+        "P8-O2",
+        "FZ-CZ",
+        "CZ-PZ"
+      ],
+      "sampling_rate": 256.0,
+      "seizure_annotations": {
+        "chb05_01.edf": [
+          [
+            50,
+            80
+          ]
+        ],
+        "chb05_02.edf": [
+          [
+            50,
+            80
+          ]
+        ]
+      }
+    },
+    "chb08": {
+      "n_files": 2,
+      "n_seizure_files": 1,
+      "n_seizures": 1,
+      "seizure_duration_sec": 30,
+      "total_duration_hours": 0.1111111111111111,
+      "channels": [
+        "FP1-F7",
+        "F7-T7",
+        "T7-P7",
+        "P7-O1",
+        "FP1-F3",
+        "F3-C3",
+        "C3-P3",
+        "P3-O1",
+        "FP2-F4",
+        "F4-C4",
+        "C4-P4",
+        "P4-O2",
+        "FP2-F8",
+        "F8-T8",
+        "T8-P8",
+        "P8-O2",
+        "FZ-CZ",
+        "CZ-PZ"
+      ],
+      "sampling_rate": 256.0,
+      "seizure_annotations": {
+        "chb08_01.edf": [
+          [
+            50,
+            80
+          ]
+        ]
+      }
+    },
+    "chb10": {
+      "n_files": 2,
+      "n_seizure_files": 2,
+      "n_seizures": 2,
+      "seizure_duration_sec": 60,
+      "total_duration_hours": 0.1111111111111111,
+      "channels": [
+        "FP1-F7",
+        "F7-T7",
+        "T7-P7",
+        "P7-O1",
+        "FP1-F3",
+        "F3-C3",
+        "C3-P3",
+        "P3-O1",
+        "FP2-F4",
+        "F4-C4",
+        "C4-P4",
+        "P4-O2",
+        "FP2-F8",
+        "F8-T8",
+        "T8-P8",
+        "P8-O2",
+        "FZ-CZ",
+        "CZ-PZ"
+      ],
+      "sampling_rate": 256.0,
+      "seizure_annotations": {
+        "chb10_01.edf": [
+          [
+            50,
+            80
+          ]
+        ],
+        "chb10_02.edf": [
+          [
+            50,
+            80
+          ]
+        ]
+      }
+    }
+  },
+  "total_files": 12,
+  "total_seizure_files": 9,
+  "total_seizures": 9,
+  "total_duration_hours": 0.6666666666666667,
+  "total_seizure_duration_seconds": 270
+}
