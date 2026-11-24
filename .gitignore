@@ -30,3 +30,7 @@ Thumbs.db
 # Kaggle credentials
 .kaggle/
 kaggle.json
+
+# Local documentation
+README_detailed.md
+
